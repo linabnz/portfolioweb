@@ -1,0 +1,158 @@
+/* Animations for website elements */
+
+/* Loading screen animations */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d1117;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+
+
+@keyframes dataStream {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 1000px;
+    }
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.loader-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+/* Fade-in animations for sections */
+.section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Project card hover animations */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-overlay {
+    opacity: 0;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+/* Timeline item animations */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: fadeInTimeline 0.5s ease forwards;
+    animation-delay: calc(var(--item-index, 0) * 0.2s);
+}
+
+@keyframes fadeInTimeline {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Skill badges animations */
+.skill-badge {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation item hover animation */
+.nav-item {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Floating action button animation */
+.floating-action-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-action-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fab-tooltip {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-action-button:hover .fab-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
