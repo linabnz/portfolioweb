@@ -1,5 +1,3 @@
-# .github/workflows/deploy.yml
-
 name: Deploy to GitHub Pages
 
 on:
@@ -14,8 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy with GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .  # Dossier contenant ton index.html
+          publish_dir: .              # Ton index.html est bien à la racine
+          publish_branch: gh-pages   # Branche de déploiement
