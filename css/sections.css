@@ -552,3 +552,23 @@
         gap: 10px;
     }
 }
+
+
+
+.certifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.certification-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+}
