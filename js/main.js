@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('projects-container', 'components/projects.html');
     loadComponent('skills-container', 'components/skills.html');
     loadComponent('footer-container', 'components/footer.html');
+    loadComponent('certifications-container', 'components/certifications.html');
+
 
     // Initialize loading animation
     initLoading();
